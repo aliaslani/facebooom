@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+    
+    {% block maincontent %}
+    {% if content.ValidationError %}
+        <div class="alert alert-danger text-center">
+            {% for error in content.ValidationError.values() %}
+                {{ error[0] }}
+            {% endfor %}
+
+        </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-3"></div>
+            <div class="col-md-6 my-3 px-5">
+            <form action="{{ url_for('signup') }}" method="post">
+                {{ form.hidden_tag() }}
+                <fieldset>
+                    <legend class="text-center border-bottom">ثبت‌نام</legend>
+                <div class="form-group">
+                    {{ form.username(class="form-control mb-2", placeholder="نام کاربری") }}
+                </div>
+                <div class="form-group">
+                    {{ form.email(class="form-control mb-2", placeholder="ایمیل") }}
+                </div>
+                <div class="form-group">
+                    {{ form.password(class="form-control mb-2" , placeholder="رمز عبور") }}
+                </div>
+                <div class="form-group">
+                   {{ form.confirm_password(class="form-control mb-2", placeholder="تکرار رمز عبور") }}
+                </div>
+                <div class="d-grid gap-2">
+                    {{ form.submit(class="btn btn-outline-info my-4 btn-block") }}
+                </div>
+                <div class="border-top pt-3">
+                    <small class="text-muted">
+                        حساب کاربری دارید؟ <a href="{{ url_for('login') }}">وارد شوید</a>
+                    </small>
+                </div>
+            </fieldset>
+            </form>
+        </div>
+{%endblock%}

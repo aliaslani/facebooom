@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+    
+    {% block maincontent %}
+    {% if get_flashed_messages() %}
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-success text-center">
+                {{ message }} </div>
+            {% endfor %}
+    {% endif %}
+    <div class="row">
+        <div class="col-md-3"></div>
+            <div class="col-md-6 my-3 px-5">
+            <form action="{{ url_for('login') }}" method="post">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <legend class="text-center border-bottom mb-4">ورود</legend>
+                <div class="form-group">
+                    {{ form.email(class="form-control mb-2", placeholder="ایمیل") }}
+                </div>
+                <div class="form-group">
+                     {{ form.password(class="form-control mb-2", placeholder="رمز عبور") }}
+                </div>
+                <div class="form-group">
+                    {{ form.remember(class="form-check-input mb-2") }} {{ form.remember.label(class="text-muted") }}
+                </div>
+                <div class="d-grid gap-2">
+                    {{ form.submit(class="btn btn-block btn-outline-info  my-4") }}
+                </div>
+                <div class="border-top pt-3">
+                    <small class="text-muted">
+                        حساب کاربری ندارید؟ <a href="{{ url_for('signup') }}">ثبت نام کنید</a>
+                    </small>
+                </div>
+            </fieldset>
+            </form>
+        </div>
+{%endblock%}

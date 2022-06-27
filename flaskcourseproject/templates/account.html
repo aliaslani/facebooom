@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{% block maincontent %}
+      <div class="row">
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    <h3 class="panel-title">{{title}}</h3>
+                    </div>
+                    <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="">Title</label>
+                            <input type="text" class="form-control" id="title" name="title" value="{{title}}">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="">Description</label>
+                            <textarea class="form-control" id="description" name="description" rows="3">{{description}}</textarea>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="">Content</label>
+                            <textarea class="form-control" id="content" name="content" rows="3">{{content}}</textarea>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="">Image</label>
+                            <input type="file" class="form-control" id="image" name="image">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="">Category</label>
+                            <select class="form-control" id="category" name="category">
+                            <option value="">
+        </div>
+
+{% endblock %}

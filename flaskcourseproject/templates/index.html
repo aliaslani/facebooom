@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block maincontent %}
+  {% if get_flashed_messages() %} 
+    {% for message in get_flashed_messages() %}
+      <div class="alert alert-success text-center">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7">
+          {% for post in content.posts %}
+            <div class="card">
+              <div class="card-body">
+                <img class="imgprofile" src="/static/images/me.jpg" alt="profilePic" width="40px" height="40px"></img> 
+                <p class="card-title">{{ post.title }}</p>
+                <p class="card-text">{{ post.content }}</p>
+                <p class="card-text"><small class="text-muted">نوشته شده توسط: {{ post.author }} </small></p>
+                <p class="card-text"><small class="text-muted">{{ post.date_posted }}</small></p>
+              </div>
+            </div>  
+          {% endfor %}
+        </div>
+
+{% endblock %}

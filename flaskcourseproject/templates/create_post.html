@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block maincontent %}
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-5">
+        <form action="{{url_for('new_post')}}" method="post">
+            {{form.hidden_tag()}}
+            <fieldset class="form-group">
+                <legend class="text-center border-bottom mb-4">ایجاد پست جدید</legend>
+          <div class="col-md-12">
+            <div class="form-group">
+              {{form.title(class="form-control mb-2", placeholder="عنوان")}}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              {{form.content(class="form-control mb-2", placeholder="محتوا")}}
+            </div>
+          </div>
+          
+          <div class="d-grid gap-2">
+            {{form.submit(class="btn btn-outline-info btn-block", value="ایجاد")}}
+          </div>
+        </fieldset>
+        </form>
+        </div>
+
+
+
+{% endblock %}

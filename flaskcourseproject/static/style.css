@@ -1,0 +1,58 @@
+@font-face{
+    font-family: 'Lalezar';
+    src: url('fonts/Lalezar-Regular.ttf');
+}
+@font-face{
+    font-family: 'faraz';
+    src: url('fonts/faraz.ttf');
+}
+@font-face{
+    font-family: 'Yekan-Bold';
+    src: url('fonts/Yekan-Bold.ttf');
+}
+@font-face{
+    font-family: 'Yekan';
+    src: url('fonts/Yekan.ttf');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url('images/bg2.jpg');
+    background-size: 30%;
+    background-repeat: repeat-y;
+    background-position: right;
+    font-family: 'Yekan-Bold', 'Lalezar';
+    direction: rtl;
+
+}
+h1{
+    text-align: center;
+}
+
+.maincontent{
+   
+    font-family: 'Yekan';
+    font-weight: 900;
+    font-size: 1em;
+}
+
+.imgprofile{
+    border: 1px solid #000;
+    border-radius: 50%;
+    display: inline;
+}
+
+.navbar-brand{
+    width: 50px;
+    height: 50px;
+    /* border: 1px solid #000; */
+    border-radius: 50%;
+}
+a{
+    text-decoration: none;
+}
